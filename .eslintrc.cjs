@@ -16,6 +16,6 @@ module.exports = {
     sourceType: "module",
   },
   rules: {
-    "no-implicit-coercion": "false", // Para convertir a número con +
+    "no-implicit-coercion": "off", // Para convertir a número con +
   },
 };
