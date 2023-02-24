@@ -10,12 +10,17 @@ module.exports = {
       files: ["*.ts", "*.tsx"],
       rules: {},
     },
+    {
+      files: ["src/**/models/**/*.ts"],
+      rules: { "@typescript-eslint/naming-convention": "off" },
+    },
   ],
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
   },
   rules: {
-    "no-implicit-coercion": "false", // Para convertir a número con +
+    "no-implicit-coercion": "off", // Para convertir a número con +
+    "new-cap": ["error", { capIsNewExceptions: ["Router"] }],
   },
 };
