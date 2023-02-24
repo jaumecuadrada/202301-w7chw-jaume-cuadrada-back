@@ -3,7 +3,7 @@ import createdebug from "debug";
 import mongoose from "mongoose";
 import connectDataBase from "./database/connectDataBase.js";
 import chalk from "chalk";
-import startServer from "./server/startServer.js";
+import initializeServer from "./server/initializeServer.js";
 
 export const debug = createdebug("social:*");
 
@@ -22,7 +22,7 @@ try {
   await connectDataBase(mongoDbUrl!);
   debug(chalk.green(`Connected to database`));
 
-  await startServer(+port);
+  await initializeServer(+port);
   debug(chalk.green(`Server listening on port ${port}`));
 } catch (error) {
   debug(error.message);

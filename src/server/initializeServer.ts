@@ -4,7 +4,7 @@ import { type CustomError } from "../CustomError/CustomError.js";
 
 const debug = createDebug("robots:server:startServer");
 
-const startServer = async (port: number) =>
+const initializeServer = async (port: number) =>
   new Promise((resolve, reject) => {
     const server = app.listen(port, () => {
       resolve(server);
@@ -21,4 +21,4 @@ const startServer = async (port: number) =>
     });
   });
 
-export default startServer;
+export default initializeServer;
