@@ -22,13 +22,19 @@ module.exports = {
       files: ["src/**/models/**/*.ts"],
       rules: { "@typescript-eslint/naming-convention": "off" },
     },
+    {
+      files: ["src/**/routers/**/*.ts"],
+      rules: {
+        "@typescript-eslint/no-unsafe-call": "off",
+      },
+    },
   ],
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
   },
   rules: {
-    "no-implicit-coercion": "off", // Para convertir a número con +
     "new-cap": ["error", { capIsNewExceptions: ["Router"] }],
+    "no-implicit-coercion": "off",
   },
 };
